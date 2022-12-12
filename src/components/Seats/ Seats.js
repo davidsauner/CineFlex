@@ -17,6 +17,7 @@ function Seat({ seats, selectSeat }) {
             key={i}
             color={selecionado}
             onClick={() => selectSeat(v.id)}
+            data-test="seat"
           >
             {v.name}
           </SeatsButton>
@@ -25,11 +26,21 @@ function Seat({ seats, selectSeat }) {
             key={i}
             color={disponivel}
             onClick={() => selectSeat(v.id)}
+            data-test="seat"
           >
             {v.name}
           </SeatsButton>
         ) : (
-          <SeatsButton key={i} color={indisponivel}>
+          <SeatsButton
+            key={i}
+            color={indisponivel}
+            data-test="seat"
+            onClick={() =>
+              alert(
+                "Assento ja selecionado, por gentileza escolher outro com marcação disponivel! Caso não possua nenhum assento disponivel, escolher outra sessão!"
+              )
+            }
+          >
             {v.name}
           </SeatsButton>
         )

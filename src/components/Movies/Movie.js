@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 export default function Movie({ posterURL, id }) {
   return (
     <Link to={`/filmes/${id}`}>
-      <ImgMovie src={posterURL} alt="filme" />
+      <div data-test="movie">
+        <ImgMovie src={posterURL} alt="filme" />
+      </div>
     </Link>
   );
 }

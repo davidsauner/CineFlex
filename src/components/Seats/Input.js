@@ -17,6 +17,7 @@ export default function Input({
           onChange={(e) => setNameUser(e.target.value)}
           value={nameuser}
           name="name"
+          data-test="client-name"
         />
         <h1>CPF Do Comprador</h1>
         <input
@@ -24,9 +25,12 @@ export default function Input({
           placeholder="Digite seu CPF"
           onChange={(e) => setCpfuser(e.target.value)}
           value={cpfuser}
+          data-test="client-cpf"
         />
 
-        <button onClick={getNameAndCpf}>Reservar assento(s)</button>
+        <button data-test="book-seat-btn" onClick={getNameAndCpf}>
+          Reservar assento(s)
+        </button>
       </HootInput>
     </>
   );

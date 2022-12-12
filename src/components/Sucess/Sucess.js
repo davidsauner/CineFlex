@@ -9,26 +9,26 @@ export default function Sucess() {
       <ChoseTitleContainer>
         <p>Pedido feito com sucesso!</p>
       </ChoseTitleContainer>
-      <DataLocationContainer>
+      <DataLocationContainer data-test="movie-info">
         <p>Filme e sessao</p>
         <h1>{location.state.dayseats.movie.title}</h1>
         <h1>
           {location.state.dayseats.day.date} :{location.state.dayseats.name}
         </h1>
       </DataLocationContainer>
-      <DataLocationContainer>
+      <DataLocationContainer data-test="seats-info">
         <p>Ingressos</p>
         {location.state.ids.map((v, i) => (
           <h1 key={i}>Assento: {v}</h1>
         ))}
       </DataLocationContainer>
-      <DataLocationContainer>
+      <DataLocationContainer data-test="client-info">
         <p>Comprador</p>
         <h1>Nome: {location.state.name}</h1>
         <h1>CPF:{location.state.cpf}</h1>
       </DataLocationContainer>
       <ButtonConainer>
-        <HomeButton onClick={() => navigate("/")}>
+        <HomeButton data-test="go-home-btn" onClick={() => navigate("/")}>
           Voltar para o Home
         </HomeButton>
       </ButtonConainer>
@@ -44,6 +44,8 @@ const ChoseTitleContainer = styled.div`
   p {
     font-family: "Roboto";
     color: #247a6b;
+    font-weight: 700;
+    font-size: 24px;
   }
 `;
 const DataLocationContainer = styled.div`

@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 export default function ListDays({ weekday, date, showtimes }) {
   return (
-    <SectionContainer>
+    <SectionContainer data-test="movie-day">
       <DateContainer>
         <p>{weekday}:</p>
         <p>{date}</p>
       </DateContainer>
       {showtimes.map((v, i) => (
         <Link key={i} to={`/sessao/${v.id}`}>
-          <button>{v.name}</button>
+          <button data-test="showtime">{v.name}</button>
         </Link>
       ))}
     </SectionContainer>

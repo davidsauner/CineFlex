@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function Footer({ posterURL, title, weekday, name }) {
   return (
-    <FooterContainer>
+    <FooterContainer data-test="footer">
       <img src={posterURL} alt="movie" />
       <NamefooterContainer>
         <h1>{title}</h1>
